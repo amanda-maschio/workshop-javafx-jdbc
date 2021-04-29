@@ -18,6 +18,8 @@ import javafx.scene.layout.VBox;
 
 public class MainViewController implements Initializable {
 
+	//Referências aos elementos contidos no FXML
+	
 	@FXML
 	private MenuItem menuItemSeller;
 	
@@ -26,19 +28,22 @@ public class MainViewController implements Initializable {
 	
 	@FXML
 	private MenuItem menuItemAbout;
-	
+
 	@FXML
 	public void onMenuItemSellerAction() {
+		//Ação ao clicar na opção "SELLER" do Menu: redirecionar para a view SellerList (VBox)
 		System.out.println("onMenuItemSellerAction");
 	}
-	
+
 	@FXML
 	public void onMenuItemDepartmentAction() {
+		//Ação ao clicar na opção "DEPARTMENT" do Menu: redirecionar para a view DepartmentList (VBox)
 		loadView("/gui/DepartmentList.fxml");
 	}
-	
+
 	@FXML
 	public void onMenuItemAboutAction() {
+		//Ação ao clicar na opção "ABOUT" do Menu: redirecionar para a view About (VBox)
 		loadView("/gui/About.fxml");
 	}
 	
@@ -47,6 +52,10 @@ public class MainViewController implements Initializable {
 		
 	}
 	
+	/**
+	 * Método responsável por carregar uma View passada como parâmetro
+	 * @param absoluteName
+	 */
 	private synchronized void loadView(String absoluteName) {
 
 		try {
