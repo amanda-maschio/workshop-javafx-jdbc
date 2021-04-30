@@ -1,6 +1,6 @@
 package gui;
 
-import java.net.URL;
+import java.net.URL;	
 import java.util.List;
 import java.util.ResourceBundle;
 
@@ -58,7 +58,7 @@ public class DepartmentListController implements Initializable {
 		
 		//Comando responsável por iniciar apropriadamente o comportamento das colunas da tabela
 		tableColumnId.setCellValueFactory(new PropertyValueFactory<>("id"));
-		tableColumnId.setCellValueFactory(new PropertyValueFactory<>("name"));
+		tableColumnName.setCellValueFactory(new PropertyValueFactory<>("name"));
 		
 		//Referência para o Stage atual
 		Stage stage = (Stage) Main.getMainScene().getWindow();
@@ -72,7 +72,7 @@ public class DepartmentListController implements Initializable {
 	 */
 	public void updateTableView() {
 		
-		if(service == null) {
+		if (service == null) {
 			throw new IllegalStateException("Service was null");
 		}
 		
