@@ -14,4 +14,20 @@ public class Utils {
 	public static Stage currentStage(ActionEvent event) {
 		return (Stage) ((Node) event.getSource()).getScene().getWindow();		
 	}
+	
+	/**
+	 * Método responsável por ler uma string e converter para inteiro
+	 * Se durante a conversão o str não for um inteiro válido, a função retorna null
+	 * @param str
+	 * @return
+	 */
+	public static Integer tryParseToInt(String str) {
+	
+		try {
+			return Integer.parseInt(str);
+		}
+		catch(NumberFormatException e) {
+			return null;
+		}
+	}
 }
