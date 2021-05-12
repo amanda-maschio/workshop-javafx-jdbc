@@ -17,6 +17,7 @@ import javafx.scene.control.MenuItem;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.VBox;
 import model.services.DepartmentService;
+import model.services.SellerService;
 
 public class MainViewController implements Initializable {
 
@@ -34,7 +35,11 @@ public class MainViewController implements Initializable {
 	@FXML
 	public void onMenuItemSellerAction() {
 		//Ação ao clicar na opção "SELLER" do Menu: redirecionar para a view SellerList (VBox)
-		System.out.println("onMenuItemSellerAction");
+		//O segundo parâmetro é uma expressão lambda que seta o controller do SellerService e atualiza a tabela com os valores correspondentes
+		loadView("/gui/SellerList.fxml", (SellerListController controller) -> {
+			controller.setSellerService(new SellerService());
+			controller.updateTableView();
+		});
 	}
 
 	@FXML
