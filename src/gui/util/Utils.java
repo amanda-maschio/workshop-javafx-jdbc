@@ -42,6 +42,23 @@ public class Utils {
 	}
 	
 	/**
+	 * Método responsável por ler uma string e converter para double
+	 * Se durante a conversão o str não for um double válido, a função retorna null
+	 * @param str
+	 * @return
+	 */
+	public static Double tryParseToDouble(String str) {
+		
+		try {
+			return Double.parseDouble(str);
+		}
+		catch(NumberFormatException e) {
+			return null;
+		}
+	}
+	
+	
+	/**
 	 * Método responsável por formatar um Date em um SimpleDateFormat de uma Table
 	 * @param <T>
 	 * @param tableColumn
